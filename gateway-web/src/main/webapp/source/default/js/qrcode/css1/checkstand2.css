@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/*公共样式*/
+body{background: #FFFFFF;}
+.w1024{margin-left:auto;margin-right:auto;width:1024px}
+.button {
+    height:44px;line-height:44px;text-align:center;color:#fff;border:0;font-size:20px;letter-spacing:1px;
+    border-radius:2px;font-family:"微软雅黑"; outline: 0;background-color:#FF6600;
+}
+/*错误提示*/
+.backdrop{width:100%;height:100%;position:fixed;top:0px;right:0px;bottom:0px;left:0px;z-index:200;background-color:rgba(0,0,0,0.5)}
+.prompt-wrap{
+    width:505px;height:317px;background:#fff;border-radius:5px;margin:0 auto;position:relative;top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.prompt-wrap .promptImage{padding:20px 0 0 0;text-align:center;font-size:18px}
+.prompt-wrap .promptImage p{margin-top:30px;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prompt-wrap .promptTxt p{text-align:center;line-height:24px;padding:20px 20px 0;color:#EB0000}
+.prompt-wrap .confirmBtn{width:140px;position:absolute;bottom:30px;left:50%;margin-left:-70px}
+.prompt-wrap .confirmBtn:hover{background:#F06203}
+/*头部*/
+.header {
+    width:100%;height:63px;background-color:#fff;
+    border-bottom:1px solid #F3F3F3;box-shadow:0 0px 5px rgba(217,218,223,0.6);position:relative;z-index:111;
+}
+.header .w1024{height:63px;background-color:#fff}
+.header .w1024 .logo{width:149px;height:63px}
+.header .w1024 .logo a{
+    width:100%;height:100%;display:block;text-indent:-9999px;
+    background:url("../images/bg_logo_checkstand.png") no-repeat center center}
+.header .w1024 .nav{height:63px;line-height:63px}
+.header .w1024 .nav span{font-size:16px;padding-left:10px;color:#999999;position:relative;top:9px}
+/*尾部*/
+.footer{width:100%;min-height:300px;margin-top:38px;border-top:1px solid #F2F2F2;background:#fff}
+.footer-body .footer-body-tit{color:#666;font-size:17px;height:98px;line-height:98px}
+.footer-body .footer-body-image ul{overflow:hidden;margin-bottom:14px}
+.footer-body .footer-body-image ul li{float:left;height:38px}
+.footer-body .footer-body-image ul li + li{margin-left:47px}
+.footer-body .footer-copyright{position: relative;color: #999999;padding-top:28px;font-size: 15px;}
+.footer-body .footer-copyright .support{float: left;width:50%;}
+.footer-body .footer-copyright .copyright{float: left;width:50%;text-align: right}
+/*主体*/
+.main{background:#FFFFFF;}
+.check-wrap{min-height:590px;}
+.check-wrap .check-detail{padding-left:10px;position:relative;height:122px}
+
+/*订单信息*/
+.check-wrap .check-msg{width:76%;overflow:hidden}
+.check-wrap .check-msg h1{font-size:16px;font-weight:normal;line-height:1em;margin-top:37px;color:#363636}
+.check-wrap .check-msg p{font-size:13px;line-height:1em;margin-top:20px;color:#75767A}
+.check-wrap .check-msg p .time{color:#FF6600;}
+
+/*支付现金展示*/
+.check-wrap .check-cash{position:absolute;left:76%;top:34px;font-size:16px}
+.check-wrap .check-cash .amount{font-size:22px;color:#FF6600;padding:0 5px;letter-spacing:1px;font-family:Arial}
+
+/*选择支付*/
+.check-wrap .pay-select{
+    background:#fff;min-height:470px;
+    border:1px solid #D4DFFF;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    overflow:hidden;
+}
+.check-wrap .pay-select .s-wrap{margin:20px 20px auto 20px}
+.pay-select .s-wrap h2{font-size:16px;color:#666666;font-weight:normal;line-height:100%}
+
+/*支付列表*/
+.pay-select .s-wrap .s-list{min-height:100px;border:1px solid #D4DFFF;padding:20px 0 45px 0;margin-top:22px;background:#F6F9FF}
+.pay-select .s-wrap .s-list li{width:33%;float:left;height:46px;margin-bottom:20px;position:relative}
+.pay-select .s-wrap .s-list li label{position:relative;display:block}
+.pay-select .s-wrap .s-list li input{float:left;display:none}
+.pay-select .s-wrap .s-list li .radioIcon{float:left;display:block;height:16px;width:16px;margin:14px 0 0 20px;background:url("../images/bg-custom-inputs.png") no-repeat 0 0}
+.pay-select .s-wrap .s-list li .pay_label{position:absolute;top:0;left:45px;display:block;float:left;width:234px;height:44px;border:1px solid #D4DFFF;cursor:pointer;font-size:18px;line-height:44px;background:#FFFFFF;overflow:hidden}
+.pay-select .s-wrap .s-list li .pay_label span.imgicon{display:block;margin:10px 0 0 12px;width:30px;height:24px;overflow:hidden;text-align:center}
+.pay-select .s-wrap .s-list li .pay_label span.imgicon img{max-width:30px;}
+.pay-select .s-wrap .s-list li .pay_label span.payname{position:absolute;left:55px;top:0;white-space:nowrap;color:#666666}
+.pay-select .s-wrap .s-list li label em.small{font-size:12px;font-style:normal;padding-left:3px}
+.pay-select .s-wrap .s-list li .pay_label:hover{border-color:#c7d4f9}
+
+/*选中样式*/
+.pay-select .s-wrap .s-list li input:checked + .radioIcon{background-position:0 -26px}
+/*立即支付按钮*/
+.pay-select .s-wrap .s-btn{margin-top:30px;padding-bottom:20px}
+.pay-select .s-btn .payBtn.disabled{background:#cccccc}
+.pay-select .s-btn .payBtn{width:216px}
+.pay-select .s-btn .payBtn:active span{position:relative;left:1px}
+
+/*===============以下为付款成功样式=================*/
+.hint{margin-top:20px;height:478px;border:1px solid #D4DFFF;background:#F6F9FF}
+.hint .h-text{text-align:center;height:37px;line-height:37px;margin-top:137px;font-size:20px;color:#565752;}
+.hint .h-text img{margin-right:14px}
+.leave{padding:0 8px;font-weight:bold;color: #FF6600}
+.hint .h-btn{text-align:center;margin-top:130px}
+.hint .h-btn .back{display:inline-block;width:130px}
+
+/*===============以下为微信支付页面样式=================*/
+.pay-left{float:left;width:446px;padding-left:70px}
+.pay-left h2{font-size:16px;font-weight:normal;margin:30px 0;line-height:1;color:#666666}
+.pay-left p.txt{font-size:14px;line-height:1;color:#B6B6B6}
+.pay-left .scanCode{margin-top:22px;width:308px;height:308px;border:1px solid #D4DFFF;text-align:center}
+.pay-left .scanCode img{padding-top:15px}
+.pay-left .usetext{color:#fff;margin-top:20px;margin-bottom:65px;width:310px;height:60px;background:#FF6600 url("../images/bg_usetext.png") no-repeat 60px center}
+.pay-left .usetext p{position:relative;top:8px;left:120px;line-height:22px}
+.pay-right{float:right;margin-top:76px;width:428px}
+
+/*===============以下为css hack=================*/
+
+/*css hack：ie6,7 */
+* html .check-wrap .pay-select{height:470px;overflow:auto}
+
+/*css hack：ie6,7,8*/
+@media \0screen\,screen\9 {
+    /*错误提示*/
+    .backdrop{background-color:#000}
+    .backdrop .prompt-wrap{top:20%}
+    /*单选按钮*/
+    .pay-select .s-wrap .s-list li input{display:block;margin:12px 0 0 24px}
+    .pay-select .s-wrap .s-list li .radioIcon{display:none}
+}
+.pay-select .s-wrap .s-list li input{
+    /*ie6*/
+    _margin: 12px 0 0 12px;
+}

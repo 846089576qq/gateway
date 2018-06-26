@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IGatewayMapper" >
+	<resultMap id="BaseResultMap" type="com.gateway.payment.entity.GatewayEntity" >
+		<id column="gid" property="gid" jdbcType="INTEGER" />
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="cid" property="cid" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="sub_channel_code" property="subChannelCode" jdbcType="VARCHAR" />
+		<result column="nature" property="nature" jdbcType="INTEGER" />
+		<result column="rate" property="rate" jdbcType="DECIMAL" />
+		<result column="cashiername" property="cashiername" jdbcType="VARCHAR" />
+		<result column="payproduct" property="payproduct" jdbcType="VARCHAR" />
+		<result column="appliscenarios" property="appliscenarios" jdbcType="VARCHAR" />
+		<result column="access_party" property="accessParty" jdbcType="VARCHAR" />
+		<result column="logo_url" property="logoUrl" jdbcType="VARCHAR" />
+		<result column="logo_url_app" property="logoUrlApp" jdbcType="VARCHAR" />
+		<result column="disable" property="disable" jdbcType="INTEGER" />
+		<result column="clearform" property="clearform" jdbcType="VARCHAR" />
+		<result column="priority" property="priority" jdbcType="VARCHAR" />
+		<result column="remarks" property="remarks" jdbcType="VARCHAR" />
+		<result column="connected_way" property="connectedWay" jdbcType="INTEGER" />
+		<result column="state" property="state" jdbcType="INTEGER" />
+		<result column="instructions" property="instructions" jdbcType="VARCHAR" />
+
+	</resultMap>
+	
+	<select id="isCategoryGateway" resultType="boolean">
+		SELECT count(*) FROM `alwaypay_payment_product_category` where category_id = (SELECT pay_product_category_id FROM `alwaypay_payment_prod_category_channel_ref` where pay_channel_id = #{gatewayId}) and category_code = #{categoryCode}
+	</select>
+	
+	<select id="getGatewayIdByPersonidAndCategoryCode" resultType="String">
+		SELECT zpg.getewayid
+		FROM
+			alwaypay_person_geteway zpg
+		INNER JOIN alwaypay_payment_prod_category_channel_ref ref ON zpg.getewayid = ref.pay_channel_id
+		INNER JOIN alwaypay_payment_product_category cate ON ref.pay_product_category_id = cate.category_id
+		WHERE cate.category_code = #{categoryCode} AND zpg.personid = #{merchantId} AND zpg.`disable` = 0 LIMIT 1
+	</select>
+	
+	<select id="getCategoryCodeByGatewayId" resultType="String">
+		SELECT
+			cate.category_code
+		FROM
+			alwaypay_payment_prod_category_channel_ref ref
+		INNER JOIN alwaypay_payment_product_category cate ON ref.pay_product_category_id = cate.category_id
+		WHERE
+			ref.pay_channel_id = #{gatewayId}
+	</select>
+	
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IEmployeeProfitMapper" >
+    <resultMap id="alwaypayEmployeeGetewayMap" type="com.gateway.payment.entity.EmployeeGatewayEntity"/>
+
+    <!--根据商户id、通道id查询通道信息以及所属代理信息-->
+    <select id="queryPersonChannelInfo" resultType="com.gateway.payment.entity.PersonChannelEntity">
+       SELECT
+              zpg.personid AS personId,
+              zpg.getewayid AS gatewayId,
+              zg.name AS channelName,
+              zpg.rate AS rate,
+              zpg.channel_cost AS channelCost,
+              zp.parentId AS employeeId,
+              ze.name AS employeeName,
+              zpg.clearform
+        FROM  alwaypay_person_geteway  zpg
+        INNER JOIN alwaypay_geteway zg ON zpg.getewayid = zg.id
+        INNER JOIN alwaypay_person zp ON zpg.personid = zp.id
+        INNER JOIN alwaypay_employee ze ON zp.parentId = ze.employeeid
+        WHERE zpg.getewayid = #{gatewayId} AND zpg.personid = #{personId} AND zpg.disable = 0
+    </select>
+    <!--根据商户id递归上级所有代理信息-->
+    <select id="queryEmployeeChannelList" resultMap="alwaypayEmployeeGetewayMap">
+     SELECT
+          zeg.employee_id AS employeeId,
+          ze.name AS employeeName,
+          zeg.getewayid AS gatewayId,
+          zg.name AS channelName,
+          zeg.rate AS rate,
+          zeg.channel_cost AS channelCost,
+          zeg.discount_rate AS discountRate,
+          zeg.fix AS fix,
+		  zeg.min AS min,
+		  zeg.max AS max
+     FROM alwaypay_employee_geteway zeg
+     INNER JOIN alwaypay_employee ze ON zeg.employee_id = ze.employeeid
+     INNER JOIN alwaypay_geteway zg ON zeg.getewayid = zg.id
+     WHERE zeg.getewayid = #{gatewayId}
+     AND zeg.clearform = #{clearform}
+     AND (FIND_IN_SET(zeg.employee_id, getParentList(#{parentId})))
+     ORDER BY ze.grade ASC
+    </select>
+    
+    
+   	<select id="existProfitByOrderId" resultType="java.lang.Integer">
+   		SELECT COUNT(1) FROM alwaypay_employee_profit WHERE order_id = #{orderId,jdbcType=VARCHAR}
+   	</select>
+</mapper>

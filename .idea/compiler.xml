@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gateway-api" />
+        <module name="gateway-channel" />
+        <module name="gateway-common" />
+        <module name="gateway-payment" />
+        <module name="gateway-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway" target="1.5" />
+      <module name="gateway-api" target="1.7" />
+      <module name="gateway-channel" target="1.7" />
+      <module name="gateway-common" target="1.7" />
+      <module name="gateway-payment" target="1.7" />
+      <module name="gateway-web" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

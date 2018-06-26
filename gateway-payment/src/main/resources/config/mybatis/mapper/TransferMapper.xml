@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.ITransferMapper" >
+  <resultMap id="BaseResultMap" type="com.gateway.payment.entity.TransferEntity">
+		<id column="transferid" jdbcType="VARCHAR" property="transferid" />
+		<result column="personid" jdbcType="INTEGER" property="personid" />
+		<result column="gatewayid" jdbcType="INTEGER" property="gatewayid" />
+		<result column="threeorderid" jdbcType="VARCHAR" property="threeorderid" />
+		<result column="payno" jdbcType="VARCHAR" property="payno" />
+		<result column="toppayno" jdbcType="VARCHAR" property="toppayno" />
+		<result column="totalprice" jdbcType="DECIMAL" property="totalprice" />
+		<result column="poundage" jdbcType="DECIMAL" property="poundage" />
+		<result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
+		<result column="state" jdbcType="INTEGER" property="state" />
+		<result column="reviewstatus" jdbcType="INTEGER" property="reviewstatus" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	
+	<select id="countOrderByOrderidinf" resultType="Integer">
+		SELECT count(*)
+		FROM
+		alwaypay_transfer WHERE orderidinf = #{orderidinf}
+	</select>
+	
+</mapper>

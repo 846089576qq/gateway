@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.gateway.payment.persistence.mapper.IOrderRefundMapper">
+	<resultMap id="BaseResultMap"
+		type="com.gateway.payment.entity.OrderRefundEntity">
+		<id column="id" property="id" jdbcType="CHAR" />
+		<result column="orderid" property="orderid" jdbcType="VARCHAR" />
+		<result column="threeid" property="threeid" jdbcType="VARCHAR" />
+		<result column="amount" property="amount" jdbcType="DECIMAL" />
+		<result column="reason" property="reason" jdbcType="VARCHAR" />
+		<result column="bgreturl" property="bgreturl" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="CHAR" />
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="orderidinf" property="orderidinf" jdbcType="VARCHAR" />
+		<result column="app_id" property="appId" jdbcType="VARCHAR" />
+		<result column="refundno" property="refundno" jdbcType="VARCHAR" />
+		<result column="toprefundno" property="toprefundno" jdbcType="VARCHAR" />
+	</resultMap>
+
+</mapper>

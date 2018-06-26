@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	metadata-complete="false">
+	<display-name>ZitoPay Gateway</display-name>
+
+	<description>A j2ee program</description>
+
+	<session-config>
+		<session-timeout>-1</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>/index/index.html</welcome-file>
+	</welcome-file-list>
+
+
+	<error-page>
+		<!-- 错误请求 -->
+		<error-code>400</error-code>
+		<location>/error/400.html</location>
+	</error-page>
+	<error-page>
+		<!-- 未授权的请求 -->
+		<error-code>401</error-code>
+		<location>/error/401.html</location>
+	</error-page>
+	<error-page>
+		<!-- 请求被拒绝 -->
+		<error-code>403</error-code>
+		<location>/error/403.html</location>
+	</error-page>
+	<error-page>
+		<!-- 请求资源未找到 -->
+		<error-code>404</error-code>
+		<location>/error/404.html</location>
+	</error-page>
+	<error-page>
+		<!-- 请求方法不支持 -->
+		<error-code>405</error-code>
+		<location>/error/405.html</location>
+	</error-page>
+	<error-page>
+		<!-- 服务器内部错误 -->
+		<error-code>500</error-code>
+		<location>/error/500.html</location>
+	</error-page>
+	<error-page>
+		<!-- 错误网关 -->
+		<error-code>502</error-code>
+		<location>/error/502.html</location>
+	</error-page>
+	<error-page>
+		<!-- 服务不可用 -->
+		<error-code>503</error-code>
+		<location>/error/503.html</location>
+	</error-page>
+	<error-page>
+		<!-- 网关超时 -->
+		<error-code>504</error-code>
+		<location>/error/504.html</location>
+	</error-page>
+
+	<error-page>
+		<!-- 未知异常 -->
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error/error.html</location>
+	</error-page>
+</web-app>

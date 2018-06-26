@@ -1,0 +1,39 @@
+@charset "UTF-8";
+body,div,a,span,img {
+    margin:0;padding:0;
+}
+body {
+    background-color:#0086ff;
+}
+.wrap {
+    min-width:1000px;
+}
+.header {
+    width:100%;
+}
+.content .bg {
+    width:558px;
+    height:339px;
+    margin:0 auto;
+    background:url(../images/bg.png) no-repeat center center;
+    background-size:100%;
+}
+.content .text {
+    margin-left:50%;
+    padding-bottom:100px;
+}
+.content .text span {
+    display: inline-block;
+    padding-right:20px;
+    vertical-align:middle;
+    font-family:"Microsoft YaHei","微软雅黑","宋体";
+    font-size:30px;
+    color:#fff;
+}
+.content .text a {
+    display:inline-block;
+    vertical-align:middle;
+    width:94px;
+    height:94px;
+    background:url(../images/to_index.png) no-repeat center center;
+}

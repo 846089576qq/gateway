@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IPersonMapper" >
+    <resultMap id="BaseResultMap" type="com.gateway.payment.entity.PersonEntity" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="pid" property="pid" jdbcType="VARCHAR" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="personkey" property="personkey" jdbcType="VARCHAR" />
+        <result column="loginname" property="loginname" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="contacts" property="contacts" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="legalperson" property="legalperson" jdbcType="VARCHAR" />
+        <result column="idcard" property="idcard" jdbcType="VARCHAR" />
+        <result column="creationtime" property="creationtime" jdbcType="TIMESTAMP" />
+        <result column="createtime" property="createtime" jdbcType="VARCHAR" />
+        <result column="imageid" property="imageid" jdbcType="VARCHAR" />
+        <result column="photoid" property="photoid" jdbcType="INTEGER" />
+        <result column="au_status" property="auStatus" jdbcType="INTEGER" />
+        <result column="invite_code" property="inviteCode" jdbcType="VARCHAR" />
+        <result column="login_id" property="loginId" jdbcType="INTEGER" />
+        <result column="parentId" property="parentid" jdbcType="INTEGER" />
+        <result column="business_name" property="businessName" jdbcType="VARCHAR" />
+        <result column="business_phone" property="businessPhone" jdbcType="VARCHAR" />
+        <result column="business_email" property="businessEmail" jdbcType="VARCHAR" />
+        <result column="business_qq" property="businessQq" jdbcType="VARCHAR" />
+        <result column="industry" property="industry" jdbcType="VARCHAR" />
+        <result column="rsapublickey" property="rsapublickey" jdbcType="VARCHAR" />
+    </resultMap>
+
+</mapper>

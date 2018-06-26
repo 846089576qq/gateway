@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://payat.ips.com.cn/WebService/OrderQuery"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  name="WSOrderQuery" targetNamespace="http://payat.ips.com.cn/WebService/OrderQuery">
+  <wsdl:message name="getOrderByTimeResponse">
+    <wsdl:part name="getOrderByTimeResult" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderByMerBillNo">
+    <wsdl:part name="orderQuery" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderByMerBillNoResponse">
+    <wsdl:part name="getOrderByMerBillNoResult" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderByBankNoResponse">
+    <wsdl:part name="getOrderByBankNoResult" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderByBankNo">
+    <wsdl:part name="orderQuery" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderByTime">
+    <wsdl:part name="orderQuery" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OrderQueryService">
+    <wsdl:operation name="getOrderByMerBillNo">
+      <wsdl:input message="tns:getOrderByMerBillNo" name="getOrderByMerBillNo">
+    </wsdl:input>
+      <wsdl:output message="tns:getOrderByMerBillNoResponse" name="getOrderByMerBillNoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByBankNo">
+      <wsdl:input message="tns:getOrderByBankNo" name="getOrderByBankNo">
+    </wsdl:input>
+      <wsdl:output message="tns:getOrderByBankNoResponse" name="getOrderByBankNoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByTime">
+      <wsdl:input message="tns:getOrderByTime" name="getOrderByTime">
+    </wsdl:input>
+      <wsdl:output message="tns:getOrderByTimeResponse" name="getOrderByTimeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSOrderQuerySoapBinding" type="tns:OrderQueryService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getOrderByMerBillNo">
+      <soap:operation soapAction="http://payat.ips.com.cn/WebService/OrderQuery/getOrderByMerBillNo" style="rpc"/>
+      <wsdl:input name="getOrderByMerBillNo">
+        <soap:body namespace="http://payat.ips.com.cn/WebService/OrderQuery" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrderByMerBillNoResponse">
+        <soap:body namespace="http://payat.ips.com.cn/WebService/OrderQuery" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByBankNo">
+      <soap:operation soapAction="http://payat.ips.com.cn/WebService/OrderQuery/getOrderByBankNo" style="rpc"/>
+      <wsdl:input name="getOrderByBankNo">
+        <soap:body namespace="http://payat.ips.com.cn/WebService/OrderQuery" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrderByBankNoResponse">
+        <soap:body namespace="http://payat.ips.com.cn/WebService/OrderQuery" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByTime">
+      <soap:operation soapAction="http://payat.ips.com.cn/WebService/OrderQuery/getOrderByTime" style="rpc"/>
+      <wsdl:input name="getOrderByTime">
+        <soap:body namespace="http://payat.ips.com.cn/WebService/OrderQuery" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrderByTimeResponse">
+        <soap:body namespace="http://payat.ips.com.cn/WebService/OrderQuery" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSOrderQuery">
+    <wsdl:port binding="tns:WSOrderQuerySoapBinding" name="WSOrderQuerySoap">
+      <soap:address location="http://newpay.ips.com.cn:80/psfp-entry/services/order"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

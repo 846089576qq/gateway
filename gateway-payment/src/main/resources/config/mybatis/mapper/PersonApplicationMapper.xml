@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IPersonApplicationMapper" >
+
+    <resultMap id="BaseResultMap" type="com.gateway.payment.entity.PersonApplicationEntity" >
+        <id column="application_id" property="applicationId" jdbcType="INTEGER" />
+        <result column="person_id" property="personId" jdbcType="VARCHAR" />
+        <result column="app_scenarios" property="appScenarios" jdbcType="VARCHAR" />
+        <result column="application_name" property="applicationName" jdbcType="VARCHAR" />
+        <result column="app_id" property="appId" jdbcType="VARCHAR" />
+        <result column="disabled" property="disabled" jdbcType="INTEGER" />
+        <result column="application_key" property="applicationKey" jdbcType="VARCHAR" />
+        <result column="application_desc" property="applicationDesc" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+        <result column="mod_time" property="modTime" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+</mapper>

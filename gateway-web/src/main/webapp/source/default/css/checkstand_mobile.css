@@ -1,0 +1,88 @@
+@charset "utf-8";
+html{font-size:50px}
+body{background-color:#F2F2F2}
+.wrap{width:100%;height:100%;max-width:7.5rem;margin:0 auto;position:relative;overflow: hidden}
+.button{
+    border:0;font-size:0.32rem;color:#fff;width:100%;max-width:7.5rem;margin:auto;border-radius:2px;
+    background:#38BAFF;height:0.88rem;line-height:0.88rem;text-align:center;font-family:"微软雅黑";letter-spacing:0.06rem
+}
+/*支付剩余时间*/
+.paytime{background:#fff;overflow:hidden;clear:both;height:2.1rem;font-size:0.25rem;text-align:center}
+.paytime p:first-child{margin-top:0.35rem}
+.paytime p{line-height:100%;margin:0 0.1rem;}
+.paytime .time{font-size:0.4rem;padding:0.2rem 0 0.35rem;font-weight:bold}
+.paytime .yellow{color:#FF6600}
+/*应付金额*/
+.payAmount{border-top:1px solid #FAFAFA;background:#fff;height:0.88rem;line-height:0.88rem;font-size:0.28rem;padding:0 0.2rem}
+.payAmount .tit{float:left}
+#amount{float:right;color:#FF6600;font-size:0.38rem}
+
+/*选择支付*/
+.payselect {
+    background-color: #fff;
+    border-bottom:1.5rem solid #F2F2F2;
+}
+.payselect .paytitle{height:0.75rem;background: #F2F2F2}
+.payselect .paytitle p{line-height:0.75rem;padding-left:0.2rem;font-size:0.24rem}
+.payselect ul{margin:0 0.2rem;overflow:hidden}
+.payselect ul li{position:relative;height:0.88rem;line-height:0.88rem;border-top:1px solid #F2F2F2}
+.payselect ul li:first-child{border: 0;}
+.payselect ul li .payicon{margin-top:0.19rem;float:left;display:block;width:0.5rem;height:0.5rem;overflow:hidden}
+.payselect ul li .payicon img{width:0.5rem;height:0.5rem}
+.payselect ul li .paytxt{float:left;display:block;font-size:0.28rem;margin-left:0.22rem;width:79%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.payselect ul li .paycheck{position:absolute;right:0.2rem;top:0.27rem;display:block;width:0.34rem;height:0.34rem;background:url("../images/mobile/pay_check.png") no-repeat 0 0;background-size:100% auto}
+.payselect ul li.selected .paycheck{background:url("../images/mobile/pay_checked.png") no-repeat 0 0;background-size:100% auto}
+
+/*立即支付*/
+#subBtn {
+    position: fixed;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+}
+/*点击支付后*/
+.dis{
+    background-color: #ccc;
+}
+/*==============支付成功、失败页面========start===========*/
+
+/*支付状态*/
+.pay-status{margin-top:2rem;text-align:center}
+.pay-status img{width:1.3rem;height:1.52rem}
+.pay-status-txt{margin-top:0.5rem;text-align:center;font-size:0.33rem}
+.back-page{margin:1.55rem 0}
+/*返回按钮*/
+.backBtn{display:block;width:2rem;height:0.88rem;border-radius:3px}
+
+.prompt {
+    display: none;
+    opacity: 1;
+    position: fixed;
+    width: 2.6rem;
+    height: 2.3rem;
+    background: rgba(0, 0, 0, .8);
+    text-align: center;
+    border-radius: .06rem;
+    left: 0;
+    top: 50%;
+    right: 0;
+    margin: -1.15rem auto 0
+}
+
+.prompt .imgx {
+    width: .89rem;
+    height: .89rem;
+    margin: .4rem auto
+}
+
+.prompt img {
+    width: .89rem;
+    display: block
+}
+
+.prompt .ptext {
+    font-size: .32rem;
+    color: #fff;
+    line-height: 1
+}
+/*==============支付成功、失败页面======end=============*/

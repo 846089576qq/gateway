@@ -1,0 +1,32 @@
+body {
+    font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+    color: #666;
+    background: #fff;
+}
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var {
+    margin: 0;
+    padding: 0;
+}
+div {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+em {
+    font-style: normal;
+}
+.main {
+    background-color: #ecedf2;
+    padding-bottom: 50px;
+}
+
+.w {
+    width: 990px;
+    margin: 0 auto;
+}

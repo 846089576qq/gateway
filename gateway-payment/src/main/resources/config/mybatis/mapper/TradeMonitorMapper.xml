@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.ITradeMonitorMapper" >
+    <resultMap id="BaseResultMap" type="com.gateway.payment.entity.TradeMonitorEntity" >
+        <id column="z_orderid" property="zOrderid" jdbcType="VARCHAR" />
+        <result column="z_order_state" property="zOrderState" jdbcType="INTEGER" />
+        <result column="s_order_state" property="sOrderState" jdbcType="VARCHAR" />
+        <result column="s_is_notify" property="sIsNotify" jdbcType="INTEGER" />
+        <result column="s_notify_time" property="sNotifyTime" jdbcType="VARCHAR" />
+        <result column="s_notify_value" property="sNotifyValue" jdbcType="VARCHAR" />
+        <result column="c_is_notify" property="cIsNotify" jdbcType="INTEGER" />
+        <result column="c_notify_time" property="cNotifyTime" jdbcType="VARCHAR" />
+        <result column="c_notify_value" property="cNotifyValue" jdbcType="VARCHAR" />
+        <result column="s_is_check" property="sIsCheck" jdbcType="INTEGER" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IPersonGatewayMapper" >
+	<resultMap id="BaseResultMap" type="com.gateway.payment.entity.PersonGatewayEntity" >
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="personid" property="personid" jdbcType="INTEGER" />
+		<result column="getewayid" property="getewayid" jdbcType="INTEGER" />
+		<result column="gatewaykey" property="gatewaykey" jdbcType="VARCHAR" />
+		<result column="gatewaypid" property="gatewaypid" jdbcType="VARCHAR" />
+		<result column="disable" property="disable" jdbcType="INTEGER" />
+		<result column="priority" property="priority" jdbcType="INTEGER" />
+		<result column="biztype" property="biztype" jdbcType="VARCHAR" />
+		<result column="rate" property="rate" jdbcType="DECIMAL" />
+		<result column="clearform" property="clearform" jdbcType="VARCHAR" />
+		<result column="channelid" property="channelid" jdbcType="VARCHAR" />
+		<result column="termid" property="termid" jdbcType="VARCHAR" />
+		<result column="hsinfkey" property="hsinfkey" jdbcType="VARCHAR" />
+		<result column="gatewayname" property="gatewayname" jdbcType="VARCHAR" />
+		<result column="is_show" property="isShow" jdbcType="CHAR" />
+		<result column="is_open" property="isOpen" jdbcType="INTEGER" />
+		<result column="application_id" property="applicationId" jdbcType="INTEGER" />
+		<result column="pid" property="pid" jdbcType="VARCHAR" />
+		<result column="zkey" property="zkey" jdbcType="VARCHAR" />
+		<result column="appid" property="appid" jdbcType="VARCHAR" />
+		<result column="account_no" property="accountNo" jdbcType="VARCHAR" />
+		<result column="rsa" property="rsa" jdbcType="VARCHAR" />
+		<result column="channel_cost" property="channelCost" jdbcType="DECIMAL" />
+		<result column="is_checked" property="isChecked" jdbcType="CHAR" />
+		<result column="ext1" property="ext1" jdbcType="VARCHAR" />
+		<result column="ext2" property="ext2" jdbcType="VARCHAR" />
+		<result column="ext3" property="ext3" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="findIndividualPayChannel" resultType="java.util.Map">
+	  	SELECT 
+		  t1.id gatewayid,
+		  t1.cashiername cashiername,
+		  t4.image_path imagepath 
+		FROM
+		  alwaypay_person_geteway t 
+		  INNER JOIN alwaypay_geteway t1 
+		    ON t.getewayid = t1.id 
+		  INNER JOIN alwaypay_person_application t2 
+		    ON t2.person_id = t.personid 
+		  INNER JOIN alwaypay_person_app_geteway t3 
+		    ON t3.per_geteway_id = t.id 
+		    AND t3.application_id = t2.application_id 
+		  LEFT JOIN alwaypay_image t4 
+		    ON t1.logo_url = t4.image_id 
+		WHERE t.disable = 0 
+		  AND t1.disable = 0 
+		  AND t2.disabled = 0 
+		  AND t4.disabled = 0 
+		  AND t2.app_id = #{appId,jdbcType=VARCHAR} 
+		  AND t.personid = #{merchantId,jdbcType=INTEGER} 
+		ORDER BY t.priority,
+		  t3.order
+  </select>
+
+</mapper>

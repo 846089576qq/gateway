@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IBgreturnMapper" >
+  <resultMap id="BaseResultMap" type="com.gateway.payment.entity.BgreturnEntity" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="bgreturl" property="bgreturl" jdbcType="VARCHAR" />
+    <result column="isfeedback" property="isfeedback" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="resulttime" property="resulttime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <select id="findByList" resultMap="BaseResultMap" >
+    select id,type,bgreturl,isfeedback,num,resulttime  from alwaypay_bgreturn
+    where type=#{type} and isfeedback=#{isfeedback} <![CDATA[and num < #{num} ]]>
+  </select>
+</mapper>

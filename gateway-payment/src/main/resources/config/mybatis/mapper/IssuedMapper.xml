@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IIssuedMapper" >
+   <resultMap id="BaseResultMap" type="com.gateway.payment.entity.IssuedEntity">
+    <id column="issuedid" jdbcType="VARCHAR" property="issuedid" />
+    <result column="personid" jdbcType="INTEGER" property="personid" />
+    <result column="gatewayid" jdbcType="INTEGER" property="gatewayid" />
+    <result column="threeorderid" jdbcType="VARCHAR" property="threeorderid" />
+    <result column="orderidinf" jdbcType="VARCHAR" property="orderidinf" />
+    <result column="payno" jdbcType="VARCHAR" property="payno" />
+    <result column="toppayno" jdbcType="VARCHAR" property="toppayno" />
+    <result column="totalprice" jdbcType="DECIMAL" property="totalprice" />
+    <result column="threepoundage" jdbcType="DECIMAL" property="threepoundage" />
+    <result column="accountname" jdbcType="VARCHAR" property="accountname" />
+    <result column="accountno" jdbcType="VARCHAR" property="accountno" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="identityCode" jdbcType="VARCHAR" property="identitycode" />
+    <result column="bankname" jdbcType="VARCHAR" property="bankname" />
+    <result column="branchbankname" jdbcType="VARCHAR" property="branchbankname" />
+    <result column="bankcity" jdbcType="VARCHAR" property="bankcity" />
+    <result column="bankprovince" jdbcType="VARCHAR" property="bankprovince" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+	<result column="paysucctime" property="successtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+	
+	<select id="countOrderByOrderidinf" resultType="Integer">
+		SELECT count(*)
+		FROM
+		alwaypay_issued WHERE orderidinf = #{orderidinf}
+	</select>
+	
+</mapper>

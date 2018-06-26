@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gateway.payment.persistence.mapper.IPaymentAgreementMapper" >
+  <resultMap id="BaseResultMap" type="com.gateway.payment.entity.PaymentAgreementEntity" >
+    <id column="agreement_id" property="agreementId" jdbcType="CHAR" />
+    <result column="merchant_id" property="merchantId" jdbcType="VARCHAR" />
+    <result column="mer_cust_id" property="merCustId" jdbcType="VARCHAR" />
+    <result column="cust_agreement_no" property="custAgreementNo" jdbcType="VARCHAR" />
+    <result column="cust_biz_no" property="custBizNo" jdbcType="VARCHAR" />
+    <result column="cust_card_type" property="custCardType" jdbcType="VARCHAR" />
+    <result column="cust_card_no" property="custCardNo" jdbcType="VARCHAR" />
+    <result column="cust_bank_code" property="custBankCode" jdbcType="VARCHAR" />
+    <result column="cust_contact" property="custContact" jdbcType="VARCHAR" />
+    <result column="cust_identity_code" property="custIdentityCode" jdbcType="VARCHAR" />
+    <result column="cust_name" property="custName" jdbcType="VARCHAR" />
+    <result column="credit_valid_date" property="creditValidDate" jdbcType="VARCHAR" />
+    <result column="cust_credit_cvv2" property="custCreditCvv2" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+</mapper>

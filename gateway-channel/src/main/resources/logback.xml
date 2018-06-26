@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+	<property resource="prop/gateway-channel.properties"></property>
+	<appender name="FRAMEWORK_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logfile.home}/${logfile.name}-framework.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>
+				${logfile.home}/backup/${logfile.name}-framework-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>104857600</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<MaxHistory>10</MaxHistory>
+		</rollingPolicy>
+		<encoder>
+			<!-- <pattern>%date %level [%thread] %replace(%replace(%caller{1}){'Caller\+0[\s]+at',''}){'\n',''} 
+				%msg%n</pattern> -->
+			<pattern>%date %level [%thread] %logger{100} [%file : %line] %msg%n
+			</pattern>
+			<charset class="java.nio.charset.Charset">UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="APPLICATION_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logfile.home}/${logfile.name}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>
+				${logfile.home}/backup/${logfile.name}-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>104857600</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<MaxHistory>10</MaxHistory>
+		</rollingPolicy>
+		<encoder>
+			<!-- <pattern>%date %level [%thread] %replace(%replace(%caller{1}){'Caller\+0[\s]+at',''}){'\n',''} 
+				%msg%n</pattern> -->
+			<pattern>%date %level [%thread] %logger{100} [%file : %line] %msg%n
+			</pattern>
+			<charset class="java.nio.charset.Charset">UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- <pattern>%date %level [%thread] %replace(%replace(%caller{1}){'Caller\+0[\s]+at',''}){'\n',''} 
+				%msg%n</pattern> -->
+			<pattern>%date %level [%thread] %logger{100} [%file : %line] %msg%n
+			</pattern>
+			<charset class="java.nio.charset.Charset">UTF-8</charset>
+		</encoder>
+	</appender>
+
+
+	<logger name="com.zitopay" additivity="false">
+		<level value="${logfile.level}" />
+		<appender-ref ref="${logfile.app.appender}" />
+	</logger>
+
+	<root>
+		<level value="${logfile.root.level}" />
+		<appender-ref ref="${logfile.root.appender}" />
+	</root>
+</configuration>

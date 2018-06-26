@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#feedback,#feedback2 {position:fixed; top:0; left:0; height:100%; z-index:1000; width:100%; background-color:rgba(0,0,0,0.3); overflow-y:auto; outline:0;}
+.modal-dialog {width:638px; text-align:center; margin:90px auto;}
+.modal-content {background:url(../images/rain-bg.png) no-repeat #fff; border:0;}
+.modal-header {border:0; padding-top:30px; padding-bottom:20px;}
+.modal-body {padding-bottom:20px; }
+.modal-body p {font-size:16px; font-weight:600;text-align: center;  line-height:1.4em;}
+.modal-footer {background:url(../images/model-footer.png) no-repeat 0 -25px; border:0; height:128px; text-align:center;}
+#feedback button,
+#feedback2 button
+{border:none; height:30px; width:126px; font-size:16px; line-height:30px; color:#f6f8fa; background-color:#f64d26; margin-top:50px; padding:0; cursor:pointer;}
+.hide {display:none;}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gateway.iml" filepath="$PROJECT_DIR$/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-api/gateway-api.iml" filepath="$PROJECT_DIR$/gateway-api/gateway-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-channel/gateway-channel.iml" filepath="$PROJECT_DIR$/gateway-channel/gateway-channel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-common/gateway-common.iml" filepath="$PROJECT_DIR$/gateway-common/gateway-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-payment/gateway-payment.iml" filepath="$PROJECT_DIR$/gateway-payment/gateway-payment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-web/gateway-web.iml" filepath="$PROJECT_DIR$/gateway-web/gateway-web.iml" />
+    </modules>
+  </component>
+</project>
